@@ -33,6 +33,15 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "Checking _site directory structure..."
+          ls -la _site/
+          echo "Checking if styles.css exists..."
+          test -f _site/styles.css && echo "styles.css found" || echo "styles.css NOT found"
+          echo "Checking index.html..."
+          head -20 _site/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

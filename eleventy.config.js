@@ -10,6 +10,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   
+  // Asegurar que el CSS se copie correctamente
+  eleventyConfig.addPassthroughCopy({"src/styles.css": "./styles.css"});
+  
   // Colecciones por categoría
   eleventyConfig.addCollection("ciencia", function(collectionApi) {
     return collectionApi.getFilteredByTag("ciencia").sort((a, b) => {
