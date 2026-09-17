@@ -4,14 +4,11 @@ require("dotenv").config();
 module.exports = function(eleventyConfig) {
   // Copiar archivos estáticos
   eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy({"src/styles.css": "styles.css"});
+  eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/ads.txt");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  
-  // Asegurar que el CSS se copie correctamente
-  eleventyConfig.addPassthroughCopy({"src/styles.css": "./styles.css"});
   
   // Colecciones por categoría
   eleventyConfig.addCollection("ciencia", function(collectionApi) {
