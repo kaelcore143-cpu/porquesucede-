@@ -1,0 +1,55 @@
+---
+layout: base.njk
+og_type: article
+---
+
+<article class="article-page">
+  <header class="article-header">
+    <span class="category-tag">{{ category }}</span>
+    <h1>{{ title }}</h1>
+    <p class="meta">{{ read_time or '5 min' }} de lectura · {{ category }}</p>
+  </header>
+
+  <div class="article-body">
+    <div class="answer-box">
+      <strong>Respuesta corta:</strong> {{ short_answer }}
+    </div>
+
+    <div class="ad">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="{{ adsenseId }}"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    {{ content }}
+
+    <div class="ad">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="{{ adsenseId }}"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    {% if related_articles %}
+    <div class="related-questions">
+      <h3>Preguntas relacionadas</h3>
+      <ul>
+        {% for article in related_articles %}
+        <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</article>

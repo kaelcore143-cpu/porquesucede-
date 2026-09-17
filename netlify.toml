@@ -1,0 +1,89 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/ciencia.html"
+  to = "/ciencia/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cuerpo.html"
+  to = "/cuerpo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/psicologia.html"
+  to = "/psicologia/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/animales.html"
+  to = "/animales/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tecnologia.html"
+  to = "/tecnologia/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sobre-nosotros.html"
+  to = "/sobre-nosotros/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contacto.html"
+  to = "/contacto/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/politica-privacidad.html"
+  to = "/politica-privacidad/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/politica-cookies.html"
+  to = "/politica-cookies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terminos.html"
+  to = "/terminos/"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

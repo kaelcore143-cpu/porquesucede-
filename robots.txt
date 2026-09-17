@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://porquesucede.com/sitemap.xml
+
+# Block system and temporary files
+Disallow: /_site/
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /backup_html/
+Disallow: /*.py$
+Disallow: /fix_links.py
+Disallow: /migrate_to_11ty.py
+Disallow: /update_site.py

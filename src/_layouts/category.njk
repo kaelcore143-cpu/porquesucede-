@@ -1,0 +1,43 @@
+---
+layout: base.njk
+og_type: website
+show_search: false
+---
+
+<header class="category-header">
+  <h1>{{ category_name }}</h1>
+  <p>{{ category_description }}</p>
+</header>
+
+<div class="ad">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="{{ adsenseId }}"
+           data-ad-slot="2345678901"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+<section class="articulos-lista">
+  {% for article in collections[category_slug] %}
+  <article class="articulo-card">
+    <h2><a href="{{ article.url }}">{{ article.data.title }}</a></h2>
+    <p>{{ article.data.description }}</p>
+  </article>
+  {% endfor %}
+  
+  <div class="ad">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="{{ adsenseId }}"
+           data-ad-slot="2345678901"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+</section>

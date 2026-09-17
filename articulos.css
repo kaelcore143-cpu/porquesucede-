@@ -1,0 +1,276 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES DE MARCA
+========================= */
+:root {
+  --bg: #fffdf5;
+  --text: #222;
+  --accent: #ffb74d;
+  --accent-soft: #fff3cd;
+  --border: #ffe4a3;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 10px;
+}
+
+/* =========================
+   FRASE IDENTIDAD
+========================= */
+header::after {
+  content: "No hay preguntas tontas.";
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #a66a00;
+  font-style: italic;
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #b26a00;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   BUSCADOR
+========================= */
+form[role="search"] {
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 6px 10px;
+  border: none;
+  background: var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+/* =========================
+   ARTÍCULO
+========================= */
+article {
+  margin-bottom: 40px;
+}
+
+/* =========================
+   ANUNCIOS
+========================= */
+.ad {
+  margin: 25px 0;
+  padding: 15px;
+  text-align: center;
+  background: var(--accent-soft);
+  border: 1px dashed var(--accent);
+  color: #aa6b00;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 2px solid var(--border);
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  color: #cc7a00;
+  position: relative;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #994d00;
+}
+
+/* Subrayado orbital */
+a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 50%;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* =========================
+   SCROLLBAR PERSONALIZADA
+========================= */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #fff6cc;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #ffcc80;
+  border: 2px solid #eff1f5;
+}
+
+/* =========================
+   LOGO ÁTOMO
+========================= */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.atom {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.nucleus {
+  width: 10px;
+  height: 10px;
+  background: #ffcc00;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #ffcc00;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.orbit1 {
+  width: 40px;
+  height: 15px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: spin 6s linear infinite;
+}
+
+.orbit2 {
+  width: 40px;
+  height: 15px;
+  transform: translate(-50%, -50%) rotate(60deg);
+  animation: spin 8s linear infinite reverse;
+}
+
+.orbit3 {
+  width: 40px;
+  height: 15px;
+  transform: translate(-50%, -50%) rotate(120deg);
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* =========================
+   MICROINTERACCIONES
+========================= */
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+

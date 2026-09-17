@@ -1,0 +1,15 @@
+{
+  "url_mapping": {
+    "index.html": "/",
+    "ciencia.html": "/ciencia/",
+    "cuerpo.html": "/cuerpo/",
+    "psicologia.html": "/psicologia/",
+    "animales.html": "/animales/",
+    "tecnologia.html": "/tecnologia/",
+    "contacto.html": "/contacto/",
+    "sobre-nosotros.html": "/sobre-nosotros/",
+    "politica-privacidad.html": "/politica-privacidad/",
+    "politica-cookies.html": "/politica-cookies/",
+    "terminos.html": "/terminos/"
+  }
+}
