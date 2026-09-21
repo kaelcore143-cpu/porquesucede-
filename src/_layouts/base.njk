@@ -6,321 +6,10 @@
   <title>{{ title }} | PorQuéSucede</title>
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="https://porquesucede.com{{ page.url }}">
-  <link rel="stylesheet" href="/styles.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: #0a0a0f;
-      color: #e0e0e0;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    .page-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* NAVEGACIÓN */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      border-bottom: 1px solid #1a1a2e;
-      margin-bottom: 40px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #f59e0b;
-      text-decoration: none;
-    }
-
-    .atom {
-      width: 40px;
-      height: 40px;
-      position: relative;
-    }
-
-    .nucleus {
-      width: 12px;
-      height: 12px;
-      background: #f59e0b;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .orbit {
-      position: absolute;
-      border: 2px solid #f59e0b;
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .orbit1 { width: 30px; height: 30px; }
-    .orbit2 { width: 36px; height: 36px; }
-    .orbit3 { width: 40px; height: 40px; }
-
-    .nav-menu {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-menu a {
-      color: #a0a0a0;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: #f59e0b;
-    }
-
-    /* BÚSQUEDA */
-    .search-form {
-      margin-bottom: 40px;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 12px 16px;
-      background: #1a1a2e;
-      border: 1px solid #2a2a4e;
-      border-radius: 8px;
-      color: #e0e0e0;
-      font-size: 1rem;
-    }
-
-    .search-input:focus {
-      outline: none;
-      border-color: #f59e0b;
-    }
-
-    .search-results {
-      position: absolute;
-      background: #1a1a2e;
-      border: 1px solid #2a2a4e;
-      border-radius: 8px;
-      max-height: 400px;
-      overflow-y: auto;
-      z-index: 1000;
-      display: none;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
-      border-radius: 12px;
-      margin-bottom: 48px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #f59e0b;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #a0a0a0;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .hero strong {
-      color: #f59e0b;
-    }
-
-    /* HOME SECTIONS */
-    .home-section {
-      margin-bottom: 48px;
-    }
-
-    .home-section h2 {
-      font-size: 1.8rem;
-      color: #f59e0b;
-      margin-bottom: 24px;
-      border-bottom: 2px solid #1a1a2e;
-      padding-bottom: 12px;
-    }
-
-    /* CATEGORÍAS GRID */
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .cat-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 24px;
-      background: #1a1a2e;
-      border: 1px solid #2a2a4e;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #e0e0e0;
-      transition: all 0.3s;
-      min-height: 160px;
-    }
-
-    .cat-card:hover {
-      border-color: #f59e0b;
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
-    }
-
-    .cat-icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
-
-    /* ARTÍCULOS LIST */
-    .articles-list {
-      list-style: none;
-    }
-
-    .articles-list li {
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #1a1a2e;
-    }
-
-    .articles-list li:last-child {
-      border-bottom: none;
-    }
-
-    .articles-list a {
-      color: #e0e0e0;
-      text-decoration: none;
-      transition: color 0.3s;
-      display: block;
-      padding: 8px 0;
-    }
-
-    .articles-list a:hover {
-      color: #f59e0b;
-      padding-left: 8px;
-    }
-
-    /* AD */
-    .ad {
-      margin: 48px 0;
-      padding: 32px;
-      background: #1a1a2e;
-      border: 1px solid #2a2a4e;
-      border-radius: 12px;
-      text-align: center;
-      color: #a0a0a0;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      border-top: 1px solid #1a1a2e;
-      margin-top: 80px;
-      background: #0a0a0f;
-    }
-
-    footer nav {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    footer a {
-      color: #a0a0a0;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    footer a:hover {
-      color: #f59e0b;
-    }
-
-    footer p {
-      color: #6a6a8a;
-      font-size: 0.9rem;
-    }
-
-    /* BREADCRUMB */
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 24px;
-      font-size: 0.9rem;
-    }
-
-    .breadcrumb a {
-      color: #a0a0a0;
-      text-decoration: none;
-    }
-
-    .breadcrumb a:hover {
-      color: #f59e0b;
-    }
-
-    .breadcrumb .sep {
-      color: #2a2a4e;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .categories-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      }
-
-      .cat-card {
-        padding: 24px 16px;
-        min-height: 140px;
-      }
-    }
-  </style>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="{{ pathPrefix }}/styles.css">
+  <link rel="icon" type="image/svg+xml" href="{{ pathPrefix }}/assets/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="{{ pathPrefix }}/favicon.ico">
+  <link rel="apple-touch-icon" href="{{ pathPrefix }}/assets/favicon.svg">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsenseId }}" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="{{ adsenseId }}">
   
@@ -378,7 +67,7 @@
   <div class="page-wrapper">
     <header>
       <nav class="navbar">
-        <a href="/" class="logo">
+        <a href="{{ pathPrefix }}/" class="logo">
           <div class="atom">
             <div class="nucleus"></div>
             <div class="orbit orbit1"></div>
@@ -388,12 +77,12 @@
           PorQuéSucede
         </a>
         <ul class="nav-menu">
-          <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Inicio</a></li>
-          <li><a href="/ciencia/" {% if '/ciencia/' in page.url %}class="active"{% endif %}>Ciencia</a></li>
-          <li><a href="/cuerpo/" {% if '/cuerpo/' in page.url %}class="active"{% endif %}>Cuerpo</a></li>
-          <li><a href="/psicologia/" {% if '/psicologia/' in page.url %}class="active"{% endif %}>Psicología</a></li>
-          <li><a href="/animales/" {% if '/animales/' in page.url %}class="active"{% endif %}>Animales</a></li>
-          <li><a href="/tecnologia/" {% if '/tecnologia/' in page.url %}class="active"{% endif %}>Tecnología</a></li>
+          <li><a href="{{ pathPrefix }}/" {% if page.url == '/' %}class="active"{% endif %}>Inicio</a></li>
+          <li><a href="{{ pathPrefix }}/ciencia/" {% if '/ciencia/' in page.url %}class="active"{% endif %}>Ciencia</a></li>
+          <li><a href="{{ pathPrefix }}/cuerpo/" {% if '/cuerpo/' in page.url %}class="active"{% endif %}>Cuerpo</a></li>
+          <li><a href="{{ pathPrefix }}/psicologia/" {% if '/psicologia/' in page.url %}class="active"{% endif %}>Psicología</a></li>
+          <li><a href="{{ pathPrefix }}/animales/" {% if '/animales/' in page.url %}class="active"{% endif %}>Animales</a></li>
+          <li><a href="{{ pathPrefix }}/tecnologia/" {% if '/tecnologia/' in page.url %}class="active"{% endif %}>Tecnología</a></li>
         </ul>
       </nav>
       
@@ -407,13 +96,13 @@
       
       {% if breadcrumbs %}
       <nav class="breadcrumb">
-        <a href="/">Inicio</a>
+        <a href="{{ pathPrefix }}/">Inicio</a>
         <span class="sep">›</span>
         {% for crumb in breadcrumbs %}
           {% if loop.last %}
             <span>{{ crumb.name }}</span>
           {% else %}
-            <a href="{{ crumb.url }}">{{ crumb.name }}</a>
+            <a href="{{ pathPrefix }}{{ crumb.url }}">{{ crumb.name }}</a>
             <span class="sep">›</span>
           {% endif %}
         {% endfor %}
@@ -428,15 +117,15 @@
     <footer>
       <p>&copy; {{ year }} PorQuéSucede</p>
       <nav>
-        <a href="/sobre-nosotros/">Sobre nosotros</a>
-        <a href="/contacto/">Contacto</a>
-        <a href="/politica-privacidad/">Privacidad</a>
-        <a href="/politica-cookies/">Cookies</a>
-        <a href="/terminos/">Términos</a>
+        <a href="{{ pathPrefix }}/sobre-nosotros/">Sobre nosotros</a>
+        <a href="{{ pathPrefix }}/contacto/">Contacto</a>
+        <a href="{{ pathPrefix }}/politica-privacidad/">Privacidad</a>
+        <a href="{{ pathPrefix }}/politica-cookies/">Cookies</a>
+        <a href="{{ pathPrefix }}/terminos/">Términos</a>
       </nav>
     </footer>
   </div>
 
-  <script src="/js/search.js"></script>
+  <script src="{{ pathPrefix }}/js/search.js"></script>
 </body>
 </html>

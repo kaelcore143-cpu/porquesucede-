@@ -46,7 +46,7 @@ og_type: article
       <h3>Preguntas relacionadas</h3>
       <ul>
         {% for article in related_articles %}
-        <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+        <li><a href="{{ pathPrefix }}{{ article.url }}">{{ article.title }}</a></li>
         {% endfor %}
       </ul>
     </div>

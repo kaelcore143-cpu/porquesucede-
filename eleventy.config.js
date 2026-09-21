@@ -53,6 +53,9 @@ module.exports = function(eleventyConfig) {
 
   // Make environment variables available in templates
   eleventyConfig.addGlobalData("adsenseId", process.env.ADSENSE_ID || "");
+  
+  // Add pathPrefix as global data for use in templates
+  eleventyConfig.addGlobalData("pathPrefix", "/porquesucede-/");
 
   // Configuración de directorios
   return {

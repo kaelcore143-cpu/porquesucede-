@@ -24,7 +24,7 @@ show_search: false
 <section class="articulos-lista">
   {% for article in collections[category_slug] %}
   <article class="articulo-card">
-    <h2><a href="{{ article.url }}">{{ article.data.title }}</a></h2>
+    <h2><a href="{{ pathPrefix }}{{ article.url }}">{{ article.data.title }}</a></h2>
     <p>{{ article.data.description }}</p>
   </article>
   {% endfor %}
