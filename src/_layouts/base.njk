@@ -6,10 +6,10 @@
   <title>{{ title }} | PorQuéSucede</title>
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="https://porquesucede.com{{ page.url }}">
-  <link rel="stylesheet" href="{{ pathPrefix }}/styles.css">
-  <link rel="icon" type="image/svg+xml" href="{{ pathPrefix }}/assets/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="{{ pathPrefix }}/favicon.ico">
-  <link rel="apple-touch-icon" href="{{ pathPrefix }}/assets/favicon.svg">
+  <link rel="stylesheet" href="{{ '/styles.css' | addPathPrefix }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | addPathPrefix }}">
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | addPathPrefix }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/favicon.svg' | addPathPrefix }}">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsenseId }}" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="{{ adsenseId }}">
   
@@ -67,7 +67,7 @@
   <div class="page-wrapper">
     <header>
       <nav class="navbar">
-        <a href="{{ pathPrefix }}/" class="logo">
+        <a href="{{ '/' | addPathPrefix }}" class="logo">
           <div class="atom">
             <div class="nucleus"></div>
             <div class="orbit orbit1"></div>
@@ -77,12 +77,12 @@
           PorQuéSucede
         </a>
         <ul class="nav-menu">
-          <li><a href="{{ pathPrefix }}/" {% if page.url == '/' %}class="active"{% endif %}>Inicio</a></li>
-          <li><a href="{{ pathPrefix }}/ciencia/" {% if '/ciencia/' in page.url %}class="active"{% endif %}>Ciencia</a></li>
-          <li><a href="{{ pathPrefix }}/cuerpo/" {% if '/cuerpo/' in page.url %}class="active"{% endif %}>Cuerpo</a></li>
-          <li><a href="{{ pathPrefix }}/psicologia/" {% if '/psicologia/' in page.url %}class="active"{% endif %}>Psicología</a></li>
-          <li><a href="{{ pathPrefix }}/animales/" {% if '/animales/' in page.url %}class="active"{% endif %}>Animales</a></li>
-          <li><a href="{{ pathPrefix }}/tecnologia/" {% if '/tecnologia/' in page.url %}class="active"{% endif %}>Tecnología</a></li>
+          <li><a href="{{ '/' | addPathPrefix }}" {% if page.url == '/' %}class="active"{% endif %}>Inicio</a></li>
+          <li><a href="{{ '/ciencia/' | addPathPrefix }}" {% if '/ciencia/' in page.url %}class="active"{% endif %}>Ciencia</a></li>
+          <li><a href="{{ '/cuerpo/' | addPathPrefix }}" {% if '/cuerpo/' in page.url %}class="active"{% endif %}>Cuerpo</a></li>
+          <li><a href="{{ '/psicologia/' | addPathPrefix }}" {% if '/psicologia/' in page.url %}class="active"{% endif %}>Psicología</a></li>
+          <li><a href="{{ '/animales/' | addPathPrefix }}" {% if '/animales/' in page.url %}class="active"{% endif %}>Animales</a></li>
+          <li><a href="{{ '/tecnologia/' | addPathPrefix }}" {% if '/tecnologia/' in page.url %}class="active"{% endif %}>Tecnología</a></li>
         </ul>
       </nav>
       
@@ -96,13 +96,13 @@
       
       {% if breadcrumbs %}
       <nav class="breadcrumb">
-        <a href="{{ pathPrefix }}/">Inicio</a>
+        <a href="{{ '/' | addPathPrefix }}">Inicio</a>
         <span class="sep">›</span>
         {% for crumb in breadcrumbs %}
           {% if loop.last %}
             <span>{{ crumb.name }}</span>
           {% else %}
-            <a href="{{ pathPrefix }}{{ crumb.url }}">{{ crumb.name }}</a>
+            <a href="{{ crumb.url | addPathPrefix }}">{{ crumb.name }}</a>
             <span class="sep">›</span>
           {% endif %}
         {% endfor %}
@@ -117,15 +117,15 @@
     <footer>
       <p>&copy; {{ year }} PorQuéSucede</p>
       <nav>
-        <a href="{{ pathPrefix }}/sobre-nosotros/">Sobre nosotros</a>
-        <a href="{{ pathPrefix }}/contacto/">Contacto</a>
-        <a href="{{ pathPrefix }}/politica-privacidad/">Privacidad</a>
-        <a href="{{ pathPrefix }}/politica-cookies/">Cookies</a>
-        <a href="{{ pathPrefix }}/terminos/">Términos</a>
+        <a href="{{ '/sobre-nosotros/' | addPathPrefix }}">Sobre nosotros</a>
+        <a href="{{ '/contacto/' | addPathPrefix }}">Contacto</a>
+        <a href="{{ '/politica-privacidad/' | addPathPrefix }}">Privacidad</a>
+        <a href="{{ '/politica-cookies/' | addPathPrefix }}">Cookies</a>
+        <a href="{{ '/terminos/' | addPathPrefix }}">Términos</a>
       </nav>
     </footer>
   </div>
 
-  <script src="{{ pathPrefix }}/js/search.js"></script>
+  <script src="{{ '/js/search.js' | addPathPrefix }}"></script>
 </body>
 </html>

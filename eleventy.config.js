@@ -56,6 +56,11 @@ module.exports = function(eleventyConfig) {
   
   // Add pathPrefix as global data for use in templates
   eleventyConfig.addGlobalData("pathPrefix", "/porquesucede-/");
+  
+  // Custom filter to add pathPrefix to URLs
+  eleventyConfig.addFilter("addPathPrefix", (url) => {
+    return "/porquesucede-" + url;
+  });
 
   // Configuración de directorios
   return {
