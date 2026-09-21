@@ -66,6 +66,7 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["html", "njk", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
+    pathPrefix: "/porquesucede-/"
   };
 };
